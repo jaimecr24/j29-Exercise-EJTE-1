@@ -2,7 +2,6 @@ package com.exercise.bs8.persona.infrastructure.controller;
 
 import com.exercise.bs8.persona.application.NotFoundException;
 import com.exercise.bs8.persona.application.UnprocesableException;
-import com.exercise.bs8.persona.infrastructure.controller.CustomError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

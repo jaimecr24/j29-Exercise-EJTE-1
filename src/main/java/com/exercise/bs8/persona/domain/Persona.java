@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
@@ -27,29 +26,24 @@ public class Persona {
     @Column(nullable = false)
     String name;
 
-    @Column
     String surname;
 
-    @Email
     @Column(nullable = false)
     String company_email;
 
-    @Email
     @Column(nullable = false)
     String personal_email;
 
     @Column(nullable = false)
     String city;
 
-    @Column(nullable = false)
-    boolean active;
+    @Column(nullable = false) // Clase Boolean sí puede ser nulo
+    Boolean active;
 
     @Column(nullable = false)
     Date created_date;
 
-    @Column
     String imagen_url;
 
-    @Column
     Date termination_date;
 }

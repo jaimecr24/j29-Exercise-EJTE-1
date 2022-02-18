@@ -15,36 +15,36 @@ public class Controlador {
     IPersona personaService;
 
     @GetMapping
-    public ResponseEntity<List<PersonaOutputDTO>> getLista()
+    public ResponseEntity<List<PersonaOutputDTO>> findAll()
     {
-        return new ResponseEntity<>(personaService.getAllPersona(), HttpStatus.OK);
+        return new ResponseEntity<>(personaService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/persona/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<PersonaOutputDTO> getById(@PathVariable Integer id) throws Exception
     {
-        return new ResponseEntity<>(personaService.getPersonaById(id), HttpStatus.OK);
+        return new ResponseEntity<>(personaService.getById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/usuario/{usuario}")
-    public ResponseEntity<List<PersonaOutputDTO>> getByNombre(@PathVariable String usuario)
+    @GetMapping("/{usuario}/usuario")
+    public ResponseEntity<List<PersonaOutputDTO>> getByUser(@PathVariable String usuario)
     {
-        return new ResponseEntity<>(personaService.getPersonaByUsuario(usuario), HttpStatus.OK);
+        return new ResponseEntity<>(personaService.getByUser(usuario), HttpStatus.OK);
     }
 
-    @PostMapping("/persona")
-    public ResponseEntity<PersonaOutputDTO> addPersona(@RequestBody PersonaInputDTO personaInputDTO) throws Exception
+    @PostMapping
+    public ResponseEntity<PersonaOutputDTO> add(@RequestBody PersonaInputDTO personaInputDTO) throws Exception
     {
         return new ResponseEntity<>(personaService.addPersona(personaInputDTO), HttpStatus.OK);
     }
 
-    @PutMapping("/persona")
-    public ResponseEntity<PersonaOutputDTO> setPersona(@RequestBody PersonaInputDTO personaInputDTO) throws Exception
+    @PutMapping("{id}")
+    public ResponseEntity<PersonaOutputDTO> put(@RequestBody PersonaInputDTO personaInputDTO, @PathVariable Integer id) throws Exception
     {
-        return new ResponseEntity<>(personaService.setPersona(personaInputDTO), HttpStatus.OK);
+        return new ResponseEntity<>(personaService.putPersona(id, personaInputDTO), HttpStatus.OK);
     }
 
-    @DeleteMapping("/persona/{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<PersonaOutputDTO> delById(@PathVariable Integer id) throws Exception
     {
         return new ResponseEntity<>(personaService.delPersona(id), HttpStatus.OK);
