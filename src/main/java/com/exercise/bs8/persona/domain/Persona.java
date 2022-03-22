@@ -1,6 +1,8 @@
 package com.exercise.bs8.persona.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,7 +10,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Persona {
 
@@ -29,10 +32,10 @@ public class Persona {
     String surname;
 
     @NotBlank(message = "company_email es nulo")
-    String company_email;
+    String companyEmail;
 
     @NotBlank(message = "personal_email es nulo")
-    String personal_email;
+    String personalEmail;
 
     @NotBlank(message = "ciudad es nulo")
     String city;
@@ -41,9 +44,9 @@ public class Persona {
     Boolean active;
 
     @NotBlank(message = "created_date es nulo")
-    Date created_date;
+    Date createdDate;
 
-    String imagen_url;
+    String imagenUrl;
 
-    Date termination_date;
+    Date terminationDate;
 }

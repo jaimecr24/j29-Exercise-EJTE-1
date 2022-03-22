@@ -1,23 +1,25 @@
 package com.exercise.bs8.persona.infrastructure.controller;
 
 import com.exercise.bs8.persona.domain.Persona;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
-@Data
+@Setter
+@Getter
 public class PersonaInputDTO {
     String usuario;
     String password;
     String name;
     String surname;
-    String company_email;
-    String personal_email;
+    String companyEmail;
+    String personalEmail;
     String city;
     Boolean active;
-    Date created_date;
-    String imagen_url;
-    Date termination_date;
+    Date createdDate;
+    String imagenUrl;
+    Date terminationDate;
 
     public Persona toPersona(){
         Persona persona = new Persona();
@@ -25,13 +27,13 @@ public class PersonaInputDTO {
         persona.setUsuario(usuario);
         persona.setName(name);
         persona.setSurname(surname);
-        persona.setCompany_email(company_email);
-        persona.setPersonal_email(personal_email);
+        persona.setCompanyEmail(companyEmail);
+        persona.setPersonalEmail(personalEmail);
         persona.setCity(city);
         persona.setActive(active);
-        persona.setCreated_date(created_date);
-        persona.setImagen_url(imagen_url);
-        persona.setTermination_date(termination_date);
+        persona.setCreatedDate(createdDate);
+        persona.setImagenUrl(imagenUrl);
+        persona.setTerminationDate(terminationDate);
         return persona;
     }
 }

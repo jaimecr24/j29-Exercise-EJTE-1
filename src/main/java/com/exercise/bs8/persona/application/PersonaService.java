@@ -59,13 +59,13 @@ public class PersonaService implements IPersona {
         persona.setUsuario(personaInputDTO.getUsuario());
         persona.setName(personaInputDTO.getName());
         persona.setSurname(personaInputDTO.getSurname());
-        persona.setCompany_email(personaInputDTO.getCompany_email());
-        persona.setPersonal_email(personaInputDTO.getPersonal_email());
+        persona.setCompanyEmail(personaInputDTO.getCompanyEmail());
+        persona.setPersonalEmail(personaInputDTO.getPersonalEmail());
         persona.setCity(personaInputDTO.getCity());
         persona.setActive(personaInputDTO.getActive());
-        persona.setCreated_date(personaInputDTO.getCreated_date());
-        persona.setImagen_url(personaInputDTO.getImagen_url());
-        persona.setTermination_date(personaInputDTO.getTermination_date());
+        persona.setCreatedDate(personaInputDTO.getCreatedDate());
+        persona.setImagenUrl(personaInputDTO.getImagenUrl());
+        persona.setTerminationDate(personaInputDTO.getTerminationDate());
         personaRepo.save(persona);
         return new PersonaOutputDTO(persona);
     }
@@ -84,11 +84,11 @@ public class PersonaService implements IPersona {
         if (usuario.length()<6 || usuario.length()>10) throw new UnprocesableException("Error: user length must be between 6 and 10 characters");
         if (personaInputDTO.getPassword()==null) throw new UnprocesableException("Error: password is null.");
         if (personaInputDTO.getName()==null) throw new UnprocesableException("Error: name is null.");
-        if (personaInputDTO.getCompany_email()==null) throw new UnprocesableException("Error: Company_email is null.");
-        if (personaInputDTO.getPersonal_email()==null) throw new UnprocesableException("Error: Personal_email is null.");
+        if (personaInputDTO.getCompanyEmail()==null) throw new UnprocesableException("Error: Company_email is null.");
+        if (personaInputDTO.getPersonalEmail()==null) throw new UnprocesableException("Error: Personal_email is null.");
         if (personaInputDTO.getCity()==null) throw new UnprocesableException("Error: City is null.");
         if (personaInputDTO.getActive()==null) throw new UnprocesableException("Error: Active is null");
-        if (personaInputDTO.getCreated_date()==null) throw new UnprocesableException("Error: Created_date is null");
+        if (personaInputDTO.getCreatedDate()==null) throw new UnprocesableException("Error: Created_date is null");
     }
 }
 
